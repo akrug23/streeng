@@ -233,6 +233,8 @@ class Streeng
 		if ($slug === 'yes') {
 			$separator = ee()->TMPL->fetch_param('separator', '-');
 
+			$string = trim(preg_replace('/[^A-Za-z0-9-]+/', ' ', $string));
+
 			$string = preg_replace('/[^A-Za-z0-9-]+/', $separator, $string);
 		}
 
